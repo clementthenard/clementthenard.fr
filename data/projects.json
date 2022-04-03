@@ -1,0 +1,16 @@
+[{
+    "slug": "portfolio",
+    "name": "clementthenard.fr",
+    "hidden": false,
+    "image_url": "/images/projects/portfolio.png",
+    "description": "Réalisation de mon portfolio.",
+    "technologies": [
+        { "image": "vsc.svg", "name": "VS Code" },
+        { "image": "solid.svg", "name": "Solid.js" },
+        { "image": "javascript.svg", "name": "JavaScript" },
+        { "image": "typescript.svg", "name": "TypeScript" },
+        { "image": "git.svg", "name": "Git" }
+    ],
+    "github_slug": "clementthenard-hooks",
+    "external_url": null
+}]
