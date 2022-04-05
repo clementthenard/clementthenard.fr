@@ -46,21 +46,12 @@
         <div class="hidden md:block">
           <div class="ml-4 flex items-center md:ml-6">
             <div class="ml-10 flex items-baseline">
-                <a
-                  href="#"
-                  class="ml-4 px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">
-                    A propos
-                </a>
-                <a
-                  href="#"
-                  class="ml-4 px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">
-                    Mes projets
-                </a>
-                <a
-                  href="#"
-                  class="ml-4 px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">
-                    Blog
-                </a>
+                <NuxtLink class="ml-4 px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700" to="/projects">
+                  Projets
+                </NuxtLink>
+                <NuxtLink class="ml-4 px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700" to="/blog">
+                  Blog
+                </NuxtLink>
                 <button @click="showModal = true" type="button" data-modal-toggle="authentication-modal" class="hover:bg-secondary_color hover:shadow-lg hover:-translate-y-1 shadow-md translate border outline-none transition-all duration-200 inline-flex items-center md:ml-4 px-3 py-2 border-transparent focus:ring cursor-pointer rounded-lg bg-main_color text-white">
                     Une question ?
                 </button>
@@ -86,7 +77,7 @@
       </div>
     </div>
 
-    <modal v-if="showModal" @close="showModal = false">
+    <Modal v-if="showModal" @close="showModal = false">
       <div slot="header">
         Vous avez une question à me poser ?
       </div>
@@ -128,7 +119,7 @@
           </div>
         </form>
       </div>
-    </modal>
+    </Modal>
   </nav>
 </template>
 

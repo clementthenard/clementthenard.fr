@@ -51,7 +51,6 @@ export default {
 
 .modal-container {
   margin: 0px auto;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   transition: all 0.3s ease;
 }
 
