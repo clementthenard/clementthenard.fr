@@ -12,6 +12,7 @@
                     <span class="mr-1">v{{ version }}</span>
                 </span>
 			</div>
+            <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
 	</footer>
 </template>
 
