@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav :class="{ 'hidden-navbar': !showNavbar }" class="top-0 z-50 w-full fixed bg-gray-900 transition-all">
     <div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-lg xl:max-w-screen-xl">
       <div class="flex items-center justify-between h-16">
         <div class="flex items-center">
@@ -52,16 +52,16 @@
                 <NuxtLink class="ml-4 px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700" to="/blog">
                   Blog
                 </NuxtLink>
-                <button @click="showModal = true" type="button" data-modal-toggle="authentication-modal" class="hover:bg-secondary_color hover:shadow-lg hover:-translate-y-1 shadow-md translate border outline-none transition-all duration-200 inline-flex items-center md:ml-4 px-3 py-2 border-transparent focus:ring cursor-pointer rounded-lg bg-main_color text-white">
-                    Une question ?
-                </button>
+                <CthButton class="md:ml-4" type="button" @click="showModal = true">
+                  Une question ?
+                </CthButton>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div :class="[isOpen ? '' : 'hidden', 'md:hidden']">
-      <div class="px-2 pt-2 pb-3 sm:px-3">
+      <div class="px-2 pt-2 pb-3 sm:px-3 bg-gray-900">
         <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700">
           A propos
         </a>
@@ -71,13 +71,13 @@
         <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">
           Blog
         </a>
-        <a href="#" @click="showModal = true" type="button" class="shadow-md hover:shadow-lg translate hover:-translate-y-1 border outline-none transition-all duration-200 inline-flex items-center px-6 py-4 border-transparent focus:ring cursor-pointer rounded-lg bg-main_color text-white hover:secondary_color">
+        <CthButton type="button" @click="showModal = true">
           Une question ?
-        </a>
+        </CthButton>
       </div>
     </div>
 
-    <Modal v-if="showModal" @close="showModal = false">
+    <CthModal v-if="showModal" @close="showModal = false">
       <div slot="header">
         Vous avez une question à me poser ?
       </div>
@@ -119,22 +119,64 @@
           </div>
         </form>
       </div>
-    </Modal>
+    </CthModal>
   </nav>
 </template>
 
 <script>
+const OFFSET = 60
+
 export default {
   data() {
     return {
       isOpen: false,
-      showModal: false
+      showModal: false,
+
+      showNavbar: true,
+      lastScrollPosition: 0,
+      scrollValue: 0
     }
   },
+
+  mounted () {
+    this.lastScrollPosition = window.pageYOffset
+    window.addEventListener('scroll', this.onScroll)
+    const viewportMeta = document.createElement('meta')
+    viewportMeta.name = 'viewport'
+    viewportMeta.content = 'width=device-width, initial-scale=1'
+    document.head.appendChild(viewportMeta)
+  },
+
+  beforeDestroy () {
+    window.removeEventListener('scroll', this.onScroll)
+  },
+
   methods: {
     toggle () {
       this.isOpen = !this.isOpen
+    },
+
+    onScroll () {
+      if (window.pageYOffset < 0) {
+        return
+      }
+      if (Math.abs(window.pageYOffset - this.lastScrollPosition) < OFFSET) {
+        return
+      }
+      this.showNavbar = window.pageYOffset < this.lastScrollPosition
+      this.lastScrollPosition = window.pageYOffset
     }
-  }
+  },
 }
 </script>
+
+<style>
+  nav.hidden-navbar {
+    box-shadow: none;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  .nuxt-link-exact-active.nuxt-link-active{
+    background-color: rgb(55,65,81);
+  }
+</style>
