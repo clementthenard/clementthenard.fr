@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Développeur full stack",
+    "entreprise": "Seafrigo",
+    "type": "CDI",
+    "hidden": false,
+    "years": "Effectué de Novembre 2019 à Mai 2022.",
+    "external_url": "http://seafrigo.com/"
+  },
+  {
+    "name": "Intégrateur web",
+    "entreprise": "Edit.com",
+    "type": "Stage",
+    "hidden": false,
+    "years": "Effectué de Avril 2019 à Juillet 2019.",
+    "external_url": "http://edit-com.fr/"
+  }
+]

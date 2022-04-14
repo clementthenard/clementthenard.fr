@@ -69,8 +69,86 @@
 
 
       </CthContainer>
+
       <CthContainer>
-        <CthTitle mainTitle="Mon parcours scolaire" subTitle="Études supérieures où j'ai étudié" />
+        <CthTitle mainTitle="Mes expériences" subTitle="Tous les endroits et projets sur lesquelles j'ai travaillé" />
+
+        <div class="grid gap-6 mt-10 sm:mt-12 md:mt-16 sm:grid-cols-2 lg:grid-cols-3">
+          <a
+            v-for="(experience, idx) in experiences"
+            :key="idx"
+            :education="experience"
+            href="#" class="p-6 bg-white rounded-lg border border-gray-200 shadow-md">
+            <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ experience.name }}</h5>
+
+            <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded mb-2">Expérience</span>
+            <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded mb-2">{{ experience.type }}</span>
+
+              <div class="flow-root">
+                <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
+                  <li class="py-3 sm:py-4">
+                    <div class="flex items-center space-x-4">
+                      <div class="flex-shrink-0">
+                        <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie image">
+                      </div>
+                      <div class="flex-1 min-w-0">
+                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                          Bonnie Green
+                        </p>
+                        <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                          email@windster.com
+                        </p>
+                      </div>
+                      <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                        $3467
+                      </div>
+                    </div>
+                  </li>
+                  <li class="py-3 sm:py-4">
+                    <div class="flex items-center space-x-4">
+                      <div class="flex-shrink-0">
+                        <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-2.jpg" alt="Michael image">
+                      </div>
+                      <div class="flex-1 min-w-0">
+                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                          Michael Gough
+                        </p>
+                        <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                          email@windster.com
+                        </p>
+                      </div>
+                      <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                        $67
+                      </div>
+                    </div>
+                  </li>
+                  <li class="py-3 sm:py-4">
+                    <div class="flex items-center space-x-4">
+                      <div class="flex-shrink-0">
+                        <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-4.jpg" alt="Lana image">
+                      </div>
+                      <div class="flex-1 min-w-0">
+                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                          Lana Byrd
+                        </p>
+                        <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                          email@windster.com
+                        </p>
+                      </div>
+                      <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                        $367
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+          </a>
+        </div>
+
+      </CthContainer>
+
+      <CthContainer background="bg-white">
+        <CthTitle theme="dark" mainTitle="Mon parcours scolaire" subTitle="Études supérieures où j'ai étudié" />
         <ol class="relative border-l border-gray-200 dark:border-gray-700">
           <EducationTimelineItem
             v-for="(education, idx) in educations"
@@ -79,16 +157,19 @@
           />
         </ol>
       </CthContainer>
+
     </div>
 </template>
 
 <script>
+import experiencesJson from '/data/experiences.json'
 import educationsJson from '/data/educations.json'
 
 export default {
     data() {
     return {
-          educations: educationsJson
+      experiences: experiencesJson,
+      educations: educationsJson
     }
   },
   methods: {
