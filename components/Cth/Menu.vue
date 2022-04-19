@@ -95,7 +95,7 @@
           </a>
         </div>
         <p class="text-gray-300 italic text-xs text-center mb-2">Ou par là</p>
-        <form>
+        <form data-netlify="true">
           <div class="flex mb-2">
             <div class="mr-1">
                 <label for="nom" class="block mb-2 text-sm font-medium">Votre nom</label>
