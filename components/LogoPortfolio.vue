@@ -1,5 +1,5 @@
 <template>
-  <img src="../static/logo_2022.svg" alt="Logo Clément Thénard">
+  <NuxtImg src="logo_2022.svg" alt="Logo Clément Thénard"/>
 </template>
 
 <script>

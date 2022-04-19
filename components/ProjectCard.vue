@@ -5,7 +5,7 @@
   >
     <div class="aspect-w-16 aspect-h-9">
       <NuxtImg
-        :src="project.image_url"
+        :src="project.thumbnail !== '' ? project.thumbnail : 'image-not-found.png'"
         class="object-cover w-full rounded-xl"
       />
     </div>

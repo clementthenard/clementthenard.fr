@@ -3,16 +3,22 @@
     "name": "Développeur full stack",
     "entreprise": "Seafrigo",
     "type": "CDI",
+    "type_code" : "emploi",
     "hidden": false,
-    "years": "Effectué de Novembre 2019 à Mai 2022.",
+    "years": "Novembre 2019 à Mai 2022",
+    "date": "2019-10-01",
+    "place": "Le Havre, France",
     "external_url": "http://seafrigo.com/"
   },
   {
     "name": "Intégrateur web",
     "entreprise": "Edit.com",
     "type": "Stage",
+    "type_code" : "emploi",
     "hidden": false,
-    "years": "Effectué de Avril 2019 à Juillet 2019.",
+    "years": "Avril 2019 à Juillet 2019",
+    "date": "2019-07-01",
+    "place": "Le Havre, France",
     "external_url": "http://edit-com.fr/"
   }
 ]

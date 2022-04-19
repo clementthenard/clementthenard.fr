@@ -1,14 +1,31 @@
 <template>
-  <div class="container">
-    <h1 v-if="error.statusCode === 404">Page non trouvée</h1>
-    <h1 v-else>Une erreur est survenue.</h1>
-    <NuxtLink to="/">Home page</NuxtLink>
-  </div>
+  <CthContainer>
+    <CthTitle :mainTitle="'Erreur ' + error.statusCode" :subTitle="error.message" />
+
+  </CthContainer>
 </template>
 
 <script>
 export default {
-  props: ['error'],
-  layout: 'blog' // you can set a custom layout for the error page
+  head () {
+    return {
+      title: 'Erreur ' + this.statusCode + ' - ' + this.message,
+      meta: [
+        {
+          name: 'viewport',
+          content: 'width=device-width,initial-scale=1.0,minimum-scale=1.0'
+        }
+      ]
+    }
+  },
+  computed: {
+    statusCode () {
+      return this.error.statusCode
+    },
+    message () {
+      return this.error.message
+    }
+  },
+  props: ['error']
 }
 </script>
