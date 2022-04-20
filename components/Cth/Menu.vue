@@ -95,27 +95,34 @@
           </a>
         </div>
         <p class="text-gray-300 italic text-xs text-center mb-2">Ou par là</p>
-        <form name="contact" method="POST" data-netlify="true">
+        <form 
+          name="contact" 
+          action="/thanks" 
+          method="post" 
+          netlify
+          netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="contact" />
           <div class="flex mb-2">
             <div class="mr-1">
                 <label for="nom" class="block mb-2 text-sm font-medium">Votre nom</label>
-                <input type="text" name="nom" id="nom" class="bg-gray-50 border text-sm rounded-lg focus:ring-main_color focus:border-secondary_color block w-full p-2.5" placeholder="Clément" required>
+                <input type="text" name="nom" id="nom" class="bg-gray-50 border text-sm rounded-lg focus:ring-main_color focus:border-secondary_color block w-full p-2.5 text-gray-900" placeholder="Clément" required>
             </div>
             <div class="ml-1">
                 <label for="prenom" class="block mb-2 text-sm font-medium">Votre prénom</label>
-                <input type="text" name="prenom" id="prenom" class="bg-gray-50 border text-sm rounded-lg focus:ring-main_color focus:border-secondary_color block w-full p-2.5" placeholder="Thénard" required>
+                <input type="text" name="prenom" id="prenom" class="bg-gray-50 border text-sm rounded-lg focus:ring-main_color focus:border-secondary_color block w-full p-2.5 text-gray-900" placeholder="Thénard" required>
             </div>
           </div>
           <div class="mb-2">
               <label for="email" class="block mb-2 text-sm font-medium">Votre email</label>
-              <input type="text" name="email" id="email" class="bg-gray-50 border text-sm rounded-lg focus:ring-main_color focus:border-secondary_color block w-full p-2.5" placeholder="hello@clementthenard.fr" required>
+              <input type="text" name="email" id="email" class="bg-gray-50 border text-sm rounded-lg focus:ring-main_color focus:border-secondary_color block w-full p-2.5 text-gray-900" placeholder="hello@clementthenard.fr" required>
           </div>
           <div>
             <label for="message" class="block mb-2 text-sm font-medium">Votre message</label>
-            <textarea required id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-main_color focus:focus:border-secondary_color" placeholder="Ecrivez votre message..."></textarea>
+            <textarea required id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-main_color focus:focus:border-secondary_color text-gray-900" placeholder="Ecrivez votre message..."></textarea>
           </div>
           <div class="flex justify-center mt-4">
-            <button type="submit" class="shadow-md hover:shadow-lg hover:bg-secondary_color bg-main_color translate hover:-translate-y-1 text-md font-medium border outline-none transition-all duration-200 inline-flex items-center p-2 border-transparent focus:ring cursor-pointer rounded-lg text-white bg-logoMain hover:bg-marron">Envoyer un message</button>
+            <button type="submit" class="shadow-md hover:shadow-lg bg-main_color translate hover:-translate-y-1 text-md font-medium border outline-none transition-all duration-200 inline-flex items-center p-2 border-transparent focus:ring cursor-pointer rounded-lg text-white bg-logoMain hover:bg-marron">Envoyer un message</button>
           </div>
         </form>
       </div>
