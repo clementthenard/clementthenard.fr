@@ -1,5 +1,5 @@
 <template>
-  <li class="mb-10 ml-11" v-if="!education.hidden">
+  <li class="mb-10 ml-8" v-if="!education.hidden">
         <span class="flex absolute -left-3 justify-center items-center w-6 h-6 text-lg text-gray-900 bg-white rounded-full ring-8 ring-white">
             <font-awesome-icon :icon="['fa-solid', 'fa-graduation-cap']"/>
         </span>
