@@ -62,15 +62,12 @@
     </div>
     <div :class="[isOpen ? '' : 'hidden', 'md:hidden']">
       <div class="px-2 pt-2 pb-3 sm:px-3 bg-gray-900">
-        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700">
-          A propos
-        </a>
-        <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">
+        <NuxtLink to="/projects" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">
           Mes projets
-        </a>
-        <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">
+        </NuxtLink>
+        <NuxtLink to="/blog" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">
           Blog
-        </a>
+        </NuxtLink>
         <CthButton type="button" @click="showModal = true">
           Une question ?
         </CthButton>
@@ -97,7 +94,7 @@
         <p class="text-gray-300 italic text-xs text-center mb-2">Ou par là</p>
         <form 
           name="contact" 
-          action="/thanks" 
+          action="/thanks/" 
           method="post" 
           netlify
           netlify-honeypot="bot-field"
@@ -174,6 +171,11 @@ export default {
       this.lastScrollPosition = window.pageYOffset
     }
   },
+  watch: {
+    '$route' () {
+      this.isOpen = false
+    }
+  }
 }
 </script>
 
