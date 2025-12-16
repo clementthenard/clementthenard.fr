@@ -1,6 +1,17 @@
 [
   {
     "name": "Développeur full stack",
+    "entreprise": "Wixiweb",
+    "type": "CDI",
+    "type_code" : "emploi",
+    "hidden": false,
+    "years": "Mai 2022 à maintenant",
+    "date": "2022-04-01",
+    "place": "Rouen, France",
+    "external_url": "https://wixiweb.com/"
+  },
+  {
+    "name": "Développeur full stack",
     "entreprise": "Seafrigo",
     "type": "CDI",
     "type_code" : "emploi",
@@ -8,7 +19,7 @@
     "years": "Novembre 2019 à Mai 2022",
     "date": "2019-10-01",
     "place": "Le Havre, France",
-    "external_url": "http://seafrigo.com/"
+    "external_url": "https://seafrigo.com/"
   },
   {
     "name": "Intégrateur web",
@@ -19,6 +30,6 @@
     "years": "Avril 2019 à Juillet 2019",
     "date": "2019-07-01",
     "place": "Le Havre, France",
-    "external_url": "http://edit-com.fr/"
+    "external_url": "https://edit-com.fr/"
   }
 ]
